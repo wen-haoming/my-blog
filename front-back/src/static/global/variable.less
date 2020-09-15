@@ -1,0 +1,316 @@
+// 中性色
+@white: #fff;
+@gray-100: #f8f9fa;
+@gray-200: #e9ecef;
+@gray-300: #dee2e6;
+@gray-400: #ced4da;
+@gray-500: #adb5bd;
+@gray-600: #6c757d;
+@gray-700: #495057;
+@gray-800: #343a40;
+@gray-900: #212529;
+@black: #000;
+
+//  基础色
+@blue: #4091f7;
+@ClassicBlue: #1890ff;
+@indigo: #6610f2;
+@purple: #6f42c1;
+@pink: #d63384;
+@red: #dc3545;
+@orange: #fd7e14;
+@yellow: #fadb14;
+@green: #52c41a;
+@teal: #20c997;
+@cyan: #17a2b8;
+@base-color: rgba(0, 0, 0, 0.65);
+
+// 功能色
+@primary: @blue;
+@secondary: @gray-600;
+@success: @green;
+@info: @cyan;
+@warning: @yellow;
+@danger: @red;
+@light: @gray-100;
+@dark: @gray-800;
+
+@theme-color:{
+  primary: @blue;
+  secondary: @gray-600;
+  success: @green;
+  info: @cyan;
+  warning: @yellow;
+  danger: @red;
+  light: @gray-100;
+  dark: @gray-800;
+};
+
+// 字体类型
+@font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+@font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  'Liberation Mono', 'Courier New', monospace;
+@font-family-base: @font-family-sans-serif;
+
+@base-border-color: #d9d9d9;
+@base-font-color: @base-color;
+
+// 字体大小
+@font-family-base: 14px;
+@font-size-base: 14px;
+@font-size-lg: @font-size-base * 1.25;
+@font-size-sm: @font-size-base * 0.875;
+@font-size-root: null;
+@font-variant-base: tabular-nums;
+@font-feature-settings-base: 'tnum';
+
+// 字体颜色
+@text-color: fade(@white, 65%);
+@text-color-secondary: fade(@white, 45%);
+@text-color-inverse: @white;
+
+// 字重
+@font-weight-lighter: lighter;
+@font-weight-light: 300;
+@font-weight-normal: 400;
+@font-weight-bold: 700;
+@font-weight-bolder: bolder;
+@font-weight-base: @font-weight-normal;
+
+// 行高
+@line-height-base: 1.5;
+@line-height-lg: 2;
+@line-height-sm: 1.25;
+
+// 标题大小
+@h1-font-size: @font-size-base * 2.5;
+@h2-font-size: @font-size-base * 2;
+@h3-font-size: @font-size-base * 1.75;
+@h4-font-size: @font-size-base * 1.5;
+@h5-font-size: @font-size-base * 1.25;
+@h6-font-size: @font-size-base;
+
+// 链接
+@link-color: @primary;
+@link-decoration: none;
+@link-hover-color: darken(@link-color, 15%);
+@link-hover-decoration: underline;
+
+// body
+@body-bg: @white;
+@body-color: @gray-900;
+@body-text-align: null;
+
+// Spacing
+@spacer: 14px;
+
+// Paragraphs
+
+
+@paragraph-margin-bottom: 14px;
+
+// 字体其他部分 heading list hr 等等
+@headings-margin-bottom: @spacer / 2;
+@headings-font-family: null;
+@headings-font-style: null;
+@headings-font-weight: 500;
+@headings-line-height: 1.2;
+@headings-color: null;
+
+@display1-size: 84px;
+@display2-size: 77px;
+@display3-size: 64px;
+@display4-size: 49px;
+
+@display1-weight: 300;
+@display2-weight: 300;
+@display3-weight: 300;
+@display4-weight: 300;
+@display-line-height: @headings-line-height;
+
+@lead-font-size: @font-size-base * 1.25;
+@lead-font-weight: 300;
+
+@small-font-size: 12.25px;
+
+@sub-sup-font-size: 10.5px;
+
+@text-muted: @gray-600;
+
+@initialism-font-size: @small-font-size;
+
+@blockquote-small-color: @gray-600;
+@blockquote-small-font-size: @small-font-size;
+@blockquote-font-size: @font-size-base * 1.25;
+
+@hr-color: inherit;
+@hr-height: 1px;
+@hr-opacity: 0.25;
+
+@legend-margin-bottom: 7px;
+@legend-font-size: 21px;
+@legend-font-weight: null;
+
+@mark-padding: 2.8px;
+
+@dt-font-weight: @font-weight-bold;
+
+@nested-kbd-font-weight: @font-weight-bold;
+
+@list-inline-padding: 7px;
+
+@mark-bg: #fcf8e3;
+
+@hr-margin-y: @spacer;
+
+// Code
+
+@code-font-size: @small-font-size;
+@code-color: @pink;
+@pre-color: null;
+
+// options 可配置选项
+@enable-pointer-cursor-for-buttons: true;
+
+// 边框 和 border radius
+
+@border-width: 1px;
+@border-color: @base-border-color;
+@border-radius: 2px;
+@border-radius-lg: 4.2px;
+@border-radius-sm: 2.8px;
+@border-style-base:solid;
+
+// 不同类型的 box shadow
+@box-shadow-sm: 0 1.75 3.5px rgba(@black, 0.075);
+@box-shadow: 0 7px 14px rgba(@black, 0.15);
+@box-shadow-lg: 0 14px 4.5px rgba(@black, 0.175);
+@box-shadow-inset: inset 0 1px 2px rgba(@black, 0.075);
+
+// 按钮
+// 按钮基本属性
+@m-btn-font-weight: 400;
+@m-btn-padding-y: 4px;
+@m-btn-padding-x: 15px;
+@m-btn-font-family: @font-family-base;
+@m-btn-font-size: @font-size-base;
+@m-btn-line-height: @line-height-base;
+@m-btn-border-color: lighten(@gray-900, 65%);
+
+//不同大小按钮的 padding 和 font size
+@m-btn-padding-y-sm: 3.5;
+@m-btn-padding-x-sm: 7px;
+@m-btn-font-size-sm: @font-size-sm;
+
+@m-btn-padding-y-lg: 7px;
+@m-btn-padding-x-lg: 14px;
+@m-btn-font-size-lg: @font-size-lg;
+
+// 按钮边框
+@m-btn-border-width: @border-width;
+
+// 按钮其他
+@m-btn-box-shadow: inset 0 1px 0 rgba(@white, 0.15), 0 1px 1px rgba(@black, 0.075);
+@m-btn-disabled-opacity: 0.65;
+
+// 链接按钮
+@m-btn-link-color: @link-color;
+@m-btn-link-hover-color: @link-hover-color;
+@m-btn-link-disabled-color: @gray-600;
+
+// 按钮 radius
+@m-btn-border-radius: @border-radius;
+@m-btn-border-radius-lg: @border-radius-lg;
+@m-btn-border-radius-sm: @border-radius-sm;
+
+// @m-btn-transition: all 0.15s ease-in-out, background-color 0.15s ease-in-out,
+//   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+@m-btn-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+@m-btn-transition-property: all;
+@m-btn-transition-duration: 0.3s;
+@m-btn-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+@m-btn-transition-delay: 0s;
+
+// menu
+@menu-submenu-color: @gray-800;
+@menu-border-width: @border-width;
+@menu-border-color: #f0f0f0;
+@menu-box-shadow: inset 0 1px 0 rgba(@white, 0.15),
+                        0 1px 1px rgba(@black, 0.075);
+@menu-transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+                  transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+                  top 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+                  -webkit-transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// menu-item
+@menu-item-padding-y: 7px;
+@menu-item-padding-x: 24px;
+@menu-item-active-color: @primary;
+@menu-item-active-border-width: 2px;
+@menu-item-disabled-color: @gray-600;
+
+//sub-menu
+//submenu
+@submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12),
+  0 0 6px 0 rgba(0, 0, 0, 0.04);
+@submenu-height:40px;
+@submenu-line-height:40px;
+
+
+//input
+@input-padding-y: @m-btn-padding-y;
+@input-padding-x: @m-btn-padding-x;
+@input-font-family: @m-btn-font-family;
+@input-font-size: @m-btn-font-size;
+@input-font-weight: @font-weight-base;
+@input-line-height: @m-btn-line-height;
+
+@input-padding-y-sm: @m-btn-padding-y-sm;
+@input-padding-x-sm: @m-btn-padding-x-sm;
+@input-font-size-sm: @m-btn-font-size-sm;
+
+@input-padding-y-lg: @m-btn-padding-y-lg;
+@input-padding-x-lg: @m-btn-padding-x-lg;
+@input-font-size-lg: @m-btn-font-size-lg;
+
+@input-bg: @white;
+@input-disabled-bg: @gray-200;
+@input-disabled-border-color: null;
+
+@input-color: @gray-700;
+@input-border-color: @gray-400;
+@input-border-width: @border-width;
+@input-box-shadow: @box-shadow-inset;
+
+@input-border-radius: @border-radius;
+@input-border-radius-lg: @border-radius-lg;
+@input-border-radius-sm: @border-radius-sm;
+
+@input-focus-bg: @input-bg;
+@input-focus-border-color: lighten(@primary, 25%);
+@input-focus-width: 2.8px;
+@input-focus-color: @input-color;
+@input-focus-shadow-color: rgba(@primary, 0.25);
+@input-focus-box-shadow: 0 0 0 @input-focus-width @input-focus-shadow-color;
+
+@input-placeholder-color: @gray-600;
+@input-plaintext-color: @body-color;
+
+@input-height-border: @input-border-width * 2;
+
+@input-transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+@input-group-addon-color: @input-color;
+@input-group-addon-bg: @gray-200;
+@input-group-addon-border-color: @input-border-color;
+
+// Progress bars
+
+@progress-font-size: @font-size-base * 0.75;
+@progress-bg: @gray-200;
+@progress-border-radius: @border-radius;
+@progress-bar-color: @white;
+@progress-bar-transition: width 0.6s ease;

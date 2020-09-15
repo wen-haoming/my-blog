@@ -1,0 +1,1 @@
+{"ast":null,"code":"import instance from \"./instance\";\nexport const getArticleList = async (id = '') => {\n  return instance.get('getArticleList/' + id);\n};\nexport const getArticleById = id => {\n  return instance.get('/getArticleById/' + id);\n};\nexport const getTypeInfo = () => {\n  return instance.get('/getTypeInfo');\n};","map":null,"metadata":{},"sourceType":"module"}

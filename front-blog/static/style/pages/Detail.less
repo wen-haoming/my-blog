@@ -1,0 +1,135 @@
+@import '../global/variable.less';
+
+@v:detail;
+
+.@{v}-bread{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color:lighten(@primary,25%);
+    border-radius: @border-radius-lg;
+    color:#fff;
+    padding-left: 10px;
+    .bread-txt{
+        color:@gray-700;
+    }
+}
+
+.@{v}-title{
+    padding: 10px;
+    text-align: center;
+    font-size:@h2-font-size;
+    color:@gray-700;
+}
+.@{v}-sub-title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color:@gray-700;
+}
+.@{v}-content{
+    
+}
+
+.detail-nav{
+    margin-top: 10px;
+    border-radius: @border-radius;
+   .nav-title{
+       text-align: center; 
+       color:@gray-700;
+       font-size: @h6-font-size;
+       line-height: 1.5;
+   }
+   .title-anchor{
+   }
+   
+}
+
+.bread-div{
+    padding: .5rem;
+    border-bottom:1px solid #eee;
+    background-color: #e1f0ff;
+}
+.detailed-title{
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 1rem;
+}
+.center{
+    text-align: center;
+}
+.detailed-content{
+    padding: 1.3rem;
+    font-size: 1rem;
+}
+pre{
+    display: block;
+    background-color:#f3f3f3;
+     padding: .5rem ;
+     overflow-y: auto;
+     font-weight: 300;
+     font-family: Menlo, monospace;
+     border-radius: .3rem;
+}
+pre{
+    background-color: #283646 ;
+}
+pre >code{
+    border:0px ;
+    background-color: #283646 ;
+    color:#FFF;
+
+}
+code {
+    display: inline-block ;
+    background-color:#f3f3f3;
+    border:1px solid #fdb9cc;
+    border-radius:3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color:#4f4f4f;
+    margin: 0px 3px;
+
+}
+
+.title-anchor{
+    color:#888 ;
+    padding:4px ;
+    margin: 0rem ;
+    height: auto ;
+    line-height: 1.2rem ;
+    font-size: .7rem ;
+    border-bottom: 1px dashed #eee;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.active{
+    color:rgb(30, 144, 255) ;
+}
+.nav-title{
+    text-align: center;
+    color: #888;
+    border-bottom: 1px solid rgb(30, 144, 255);
+
+}
+.article-menu{
+    font-size:12px;
+}
+iframe{
+    height: 34rem;
+}
+.detailed-content  img{
+    width: 100%;
+    border:1px solid #f3f3f3;
+}
+.title-level3{
+    display: none ;
+}
+.ant-anchor-link-title{
+    font-size: 12px ;
+}
+.ant-anchor-wrapper{
+    padding: 5px ;
+}
