@@ -11,15 +11,15 @@ jobs:
       - uses: actions/checkout@v2
       - run: yarn ins
       - run: yarn build
-      - name: Copy front-back to remote
+      - name: Copy  front-back
         uses: garygrossgarten/github-action-scp@release
         with:
           local: ./front-back/dist
-          remote: /home/blog/back
+          remote: /usr/share/nginx/html
           host: ${{secrets.HOST}}
           username: root
           password: ${{secrets.PASSWORD}}
-      - name: Copy front-back to remote
+      - name: Copy blog
         uses: garygrossgarten/github-action-scp@release
         with:
           local: ./front-blog
@@ -27,11 +27,20 @@ jobs:
           host: ${{secrets.HOST}}
           username: root
           password: ${{secrets.PASSWORD}}
-      - name: Copy front-back to remote
+      - name: Copy  server
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ./server
+          local: ./server2
           remote: /home/blog/server
           host: ${{secrets.HOST}}
           username: root
           password: ${{secrets.PASSWORD}}
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: cd /home/blog/server && yarn install && yarn start && 
+                  cd /home/blog/blog && yarn install && yarn build && yarn start;
