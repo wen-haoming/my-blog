@@ -15,7 +15,7 @@ jobs:
         uses: garygrossgarten/github-action-scp@release
         with:
           local: ./front-back/dist
-          remote: /usr/share/nginx/html
+          remote: /usr/share/nginx/back
           host: ${{secrets.HOST}}
           username: root
           password: ${{secrets.PASSWORD}}
@@ -42,5 +42,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd /home/blog/server && yarn install && yarn start && 
-                  cd /home/blog/blog && yarn install && yarn build && yarn start;
+          script: cd /home/blog/server | yarn install | yarn start | 
+                  cd /home/blog/blog | yarn install | yarn build | yarn start;
