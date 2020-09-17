@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ins": "cd front-back &&  yarn install",
+    "ins": " yarn install && cd front-back &&  yarn install",
     "build": "cd front-back &&  yarn build"
   },
   "repository": {
