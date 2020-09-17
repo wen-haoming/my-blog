@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ins": " yarn install && cd front-back &&  yarn install",
-    "build": "cd front-back &&  yarn build"
+    "bootstrap": "cd front-back && yarn install && yarn build",
+    "build": "lerna run build"
   },
   "repository": {
     "type": "git",

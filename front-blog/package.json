@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "install":"yarn install"
+    "export":"next export"
   },
   "dependencies": {
     "@ant-design/icons": "^4.2.2",

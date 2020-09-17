@@ -9,13 +9,12 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - run: yarn ins
-      - run: yarn build
+      - run: yarn bootstrap
       - name: Copy  front-back
         uses: garygrossgarten/github-action-scp@release
         with:
           local: ./front-back/dist
-          remote: /usr/share/nginx/back
+          remote: /usr/share/nginx/html/back
           host: ${{secrets.HOST}}
           username: root
           password: ${{secrets.PASSWORD}}
@@ -42,10 +41,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd /home/blog/server 
-                   yarn install 
+          script: cd /home/blog/server &
+                   yarn install &
+                   yarn start &
+                   cd /home/blog/blog & 
+                   yarn install  &
+                   yarn build &
                    yarn start 
-                   cd /home/blog/blog 
-                   yarn install 
-                   yarn build 
-                   yarn start;
