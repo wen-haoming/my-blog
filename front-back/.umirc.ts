@@ -1,11 +1,11 @@
 import { defineConfig } from 'umi';
 
-console.log()
 
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
+  publicPath:'/back/',
   routes: [
     { path: '/login', exact: false, component: '@/pages/login' },
     { path: '/',exact: false, component: '@/pages/main/index',
