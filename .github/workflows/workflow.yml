@@ -11,30 +11,30 @@ jobs:
       - uses: actions/checkout@v2
       - run: yarn ins
       - run: yarn build
-      - name: Copy  front-back
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: ./front-back/dist
-          remote: /usr/share/nginx/back
-          host: ${{secrets.HOST}}
-          username: root
-          password: ${{secrets.PASSWORD}}
-      - name: Copy blog
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: ./front-blog
-          remote: /home/blog/blog
-          host: ${{secrets.HOST}}
-          username: root
-          password: ${{secrets.PASSWORD}}
-      - name: Copy  server
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: ./server2
-          remote: /home/blog/server
-          host: ${{secrets.HOST}}
-          username: root
-          password: ${{secrets.PASSWORD}}
+#       - name: Copy  front-back
+#         uses: garygrossgarten/github-action-scp@release
+#         with:
+#           local: ./front-back/dist
+#           remote: /usr/share/nginx/back
+#           host: ${{secrets.HOST}}
+#           username: root
+#           password: ${{secrets.PASSWORD}}
+#       - name: Copy blog
+#         uses: garygrossgarten/github-action-scp@release
+#         with:
+#           local: ./front-blog
+#           remote: /home/blog/blog
+#           host: ${{secrets.HOST}}
+#           username: root
+#           password: ${{secrets.PASSWORD}}
+#       - name: Copy  server
+#         uses: garygrossgarten/github-action-scp@release
+#         with:
+#           local: ./server2
+#           remote: /home/blog/server
+#           host: ${{secrets.HOST}}
+#           username: root
+#           password: ${{secrets.PASSWORD}}
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
@@ -42,5 +42,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd /home/blog/server | yarn install | yarn start | 
-                  cd /home/blog/blog | yarn install | yarn build | yarn start;
+          script: cd /home/blog/server & yarn install & yarn start & 
+                  cd /home/blog/blog & yarn install & yarn build & yarn start;
