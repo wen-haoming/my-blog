@@ -42,5 +42,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd /home/blog/server | yarn install | yarn start | 
-                  cd /home/blog/blog | yarn install | yarn build | yarn start;
+          script: cd /home/blog/server 
+                   yarn install 
+                   yarn start 
+                   cd /home/blog/blog 
+                   yarn install 
+                   yarn build 
+                   yarn start;
