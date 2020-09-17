@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - run: yarn ins
-      - run: yarn build
+#       - run: yarn ins
+#       - run: yarn build
 #       - name: Copy  front-back
 #         uses: garygrossgarten/github-action-scp@release
 #         with:
@@ -42,5 +42,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd /home/blog/server & yarn install & yarn start & 
-                  cd /home/blog/blog & yarn install & yarn build & yarn start;
+          script: whoami
