@@ -978,6 +978,7 @@ var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_)
 // CONCATENATED MODULE: ./api/instance.js
  // import axios from "axios";
 
+console.log(process.env, '======');
 const config = {};
 
 if (true) {
