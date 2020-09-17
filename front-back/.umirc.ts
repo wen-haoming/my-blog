@@ -1,5 +1,7 @@
 import { defineConfig } from 'umi';
 
+console.log()
+
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',

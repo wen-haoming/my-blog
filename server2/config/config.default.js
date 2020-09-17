@@ -27,13 +27,13 @@ module.exports = (appInfo) => {
     // 单数据库信息配置
     client: {
       // host
-      host: "localhost",
+      host: "1234",
       // 端口号
       port: "3306",
       // 用户名
       user: "root",
       // 密码
-      password: "a36836555",
+      password: "1234",
       // 数据库名
       database: "react_blog",
     },

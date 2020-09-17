@@ -1,0 +1,24 @@
+{
+  "name": "react_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ins": "lerna run install",
+    "build": "lerna run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wen-haoming/my-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wen-haoming/my-blog/issues"
+  },
+  "homepage": "https://github.com/wen-haoming/my-blog#readme",
+  "dependencies": {
+    "lerna": "^3.22.1"
+  }
+}
