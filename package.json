@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "ins": "lerna run install",
-    "build": "lerna run build"
+    "build": "cd front-back &&  yarn build"
   },
   "repository": {
     "type": "git",
