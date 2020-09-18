@@ -474,6 +474,7 @@ module.exports = require("next/dist/next-server/lib/router-context.js");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _static_style_global_comm_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("sG+I");
@@ -491,15 +492,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("nZwT");
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _api_index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("bMwp");
-/* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("HWFp");
-/* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(marked__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("9Oib");
-/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(highlight_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var highlight_js_styles_monokai_sublime_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("bi5S");
-/* harmony import */ var highlight_js_styles_monokai_sublime_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(highlight_js_styles_monokai_sublime_css__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("b0oO");
-/* harmony import */ var _components_Author__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("Yo3B");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("8lYe");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("4Q3z");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("HWFp");
+/* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(marked__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("9Oib");
+/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(highlight_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var highlight_js_styles_monokai_sublime_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("bi5S");
+/* harmony import */ var highlight_js_styles_monokai_sublime_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(highlight_js_styles_monokai_sublime_css__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("b0oO");
+/* harmony import */ var _components_Author__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("Yo3B");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__("8lYe");
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -517,15 +520,17 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-function Index({
+
+const Home = ({
   list
-}) {
+}) => {
   const {
     0: mylist,
     1: setMylist
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(list);
-  const renderer = new marked__WEBPACK_IMPORTED_MODULE_9___default.a.Renderer();
-  marked__WEBPACK_IMPORTED_MODULE_9___default.a.setOptions({
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_9__["useRouter"])();
+  const renderer = new marked__WEBPACK_IMPORTED_MODULE_10___default.a.Renderer();
+  marked__WEBPACK_IMPORTED_MODULE_10___default.a.setOptions({
     renderer: renderer,
     gfm: true,
     pedantic: false,
@@ -537,13 +542,13 @@ function Index({
     sanitize: false,
     xhtml: false,
     highlight: function (code) {
-      return highlight_js__WEBPACK_IMPORTED_MODULE_10___default.a.highlightAuto(code).value;
+      return highlight_js__WEBPACK_IMPORTED_MODULE_11___default.a.highlightAuto(code).value;
     }
   });
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, __jsx("title", null, "Home"), __jsx("meta", {
     name: "viewport",
     content: "width=device-width, initial-scale=1, maximum-scale=1"
-  })), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_12__[/* default */ "a"], null), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Row"], {
+  })), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], null), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Row"], {
     className: "home-main",
     type: "flex",
     justify: "center"
@@ -558,16 +563,12 @@ function Index({
     dataSource: mylist,
     itemLayout: "vertical",
     header: __jsx("div", null, "\u6700\u65B0\u65E5\u5FD7"),
-    renderItem: item => __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["List"].Item, null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      href: {
-        pathname: '/detail',
-        query: {
-          id: item.id
-        }
-      }
-    }, __jsx("a", {
+    renderItem: item => __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["List"].Item, null, __jsx("a", {
+      onClick: () => {
+        router.push('/detail/[id]', `/detail/${item.id}`);
+      },
       className: "list-title"
-    }, item.title)), __jsx("div", {
+    }, item.title), __jsx("div", {
       className: "list-sub-title"
     }, __jsx("div", {
       className: "sub-item"
@@ -584,7 +585,7 @@ function Index({
     }, item.view_count))), __jsx("div", {
       className: "list-context",
       dangerouslySetInnerHTML: {
-        __html: marked__WEBPACK_IMPORTED_MODULE_9___default()(item.introduce)
+        __html: marked__WEBPACK_IMPORTED_MODULE_10___default()(item.introduce)
       }
     }))
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Col"], {
@@ -594,21 +595,22 @@ function Index({
     md: 5,
     lg: 5,
     xl: 5
-  }, __jsx(_components_Author__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], null))), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_14__[/* default */ "a"], null));
-}
+  }, __jsx(_components_Author__WEBPACK_IMPORTED_MODULE_14__[/* default */ "a"], null))), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_15__[/* default */ "a"], null));
+};
 
-Index.getInitialProps = async () => {
+async function getStaticProps(context) {
   async function getData() {
     return Object(_api_index__WEBPACK_IMPORTED_MODULE_8__[/* getArticleList */ "b"])();
   }
 
   let res = await getData();
   return {
-    list: res.data.data
+    props: {
+      list: res.data.data
+    }
   };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+}
+/* harmony default export */ __webpack_exports__["default"] = (Home);
 
 /***/ }),
 
@@ -815,10 +817,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Author = () => {
   return __jsx("div", {
     className: "author-div comm-box"
-  }, __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
-    size: 80,
-    src: "https://avatars3.githubusercontent.com/u/42735363?s=460&u=048ca9b722ac4e123dec854a332bcc3c461419d8&v=4"
-  })), __jsx("div", {
+  }, __jsx("div", null), __jsx("div", {
     className: "author-introduction"
   }, "Hi,my name is wenhaoming", __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Divider"], null, "\u793E\u4EA4\u8D26\u53F7"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
     size: 28,
@@ -854,9 +853,12 @@ const Author = () => {
 /* harmony import */ var _api_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("bMwp");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("4Q3z");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("YFqc");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // import 'static/style/components/header.less'
+
 
 
 
@@ -895,6 +897,7 @@ const Header = () => {
     count: 0
   });
   const router = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])();
+  console.log("render");
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     const getTypeInfoFn = async () => {
       return await Object(_api_index__WEBPACK_IMPORTED_MODULE_4__[/* getTypeInfo */ "c"])();
@@ -934,11 +937,11 @@ const Header = () => {
     md: 14,
     lg: 14,
     xl: 14
-  }, __jsx("span", {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    href: "/"
+  }, __jsx("a", null, __jsx("span", {
     className: "header-logo"
-  }, "\u5C0F\u660E"), __jsx("span", {
-    className: "header-txt"
-  }, "\u4E13\u6CE8\u524D\u7AEF")), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+  }, "whm.zone")))), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
     xs: 5,
     sm: 5,
     md: 7,
@@ -948,11 +951,11 @@ const Header = () => {
     mode: "horizontal"
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Menu"].Item, {
     key: "/",
-    onClick: () => router.push('/')
+    onClick: () => router.push("/")
   }, __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["HomeOutlined"], null), "\u9996\u9875"), types.map(item => {
     return __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Menu"].Item, {
       key: item.orderNum,
-      onClick: () => router.push('/list/[id]', `/list/${item.orderNum}`)
+      onClick: () => router.push("/list/[id]", `/list/${item.orderNum}`)
     }, getIcon(item.orderNum), item.typeName);
   })))));
 };
@@ -978,7 +981,6 @@ var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_)
 // CONCATENATED MODULE: ./api/instance.js
  // import axios from "axios";
 
-console.log(process.env, '======');
 const config = {};
 
 if (true) {

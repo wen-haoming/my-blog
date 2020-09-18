@@ -10,7 +10,7 @@ import {
 const Author = ()=>{
     return <div className="author-div comm-box">
             <div>
-                  <Avatar size={80} src="https://avatars3.githubusercontent.com/u/42735363?s=460&u=048ca9b722ac4e123dec854a332bcc3c461419d8&v=4"></Avatar> 
+                  {/* <Avatar size={80} src="https://gw.alipayobjects.com/mdn/prod_resou/afts/img/A*OwZWQ68zSTMAAAAAAAAAAABkARQnAQ"></Avatar>  */}
             </div>
             <div className="author-introduction">
                 Hi,my name is wenhaoming 

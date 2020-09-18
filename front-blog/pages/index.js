@@ -8,6 +8,7 @@ import Link from 'next/link'
 import {Row,Col,List, Divider} from 'antd'
 import { CalendarOutlined ,FolderOutlined,FireOutlined} from '@ant-design/icons';
 import {getArticleList} from '../api/index'
+import {useRouter} from 'next/router'
 
 import marked from 'marked'
 import hljs from "highlight.js";
@@ -17,10 +18,9 @@ import Header from '../components/Header';
 import Author from '../components/Author';
 import Footer from '../components/Footer';
 
- function Index({list}) {
-
+const Home =  ({list})=>{
     const [ mylist , setMylist ] = useState(list)
-
+    const router = useRouter()
    const renderer = new marked.Renderer();
 
    marked.setOptions({
@@ -38,8 +38,6 @@ import Footer from '../components/Footer';
       return hljs.highlightAuto(code).value;
      }
    }); 
- 
-
     return <>
         <Head>
           <title>Home</title>
@@ -54,9 +52,7 @@ import Footer from '../components/Footer';
             header={ <div>最新日志</div>  }
             renderItem={item=>(
                 <List.Item>
-                    <Link href={{pathname:'/detail',query:{id:item.id}}}>
-                         <a className="list-title">{item.title}</a>
-                    </Link>
+                    <a onClick={()=>{router.push('/detail/[id]',`/detail/${item.id}`)}} className="list-title">{item.title}</a>
                    <div className="list-sub-title">
                        <div className="sub-item">
                         <CalendarOutlined />
@@ -84,15 +80,18 @@ import Footer from '../components/Footer';
     </>
 }
 
-Index.getInitialProps = async ()=>{
-   
-   async function getData(){
+export async function getStaticProps (context){
+    async function getData(){
        return getArticleList()
    }
    let res =  await getData()
       return {
-          list:res.data.data,
+          props:{
+            list:res.data.data,
+          }
       }
 }
 
-export default Index
+export default Home
+
+
