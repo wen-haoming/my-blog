@@ -495,7 +495,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /* harmony default export */ __webpack_exports__["default"] = (({
   listContent,
-  type
+  type,
+  types
 }) => {
   const {
     0: mylist,
@@ -533,7 +534,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, __jsx("title", null, "Home"), __jsx("meta", {
     name: "viewport",
     content: "width=device-width, initial-scale=1, maximum-scale=1"
-  })), __jsx(_components_Header_js__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], null), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Row"], {
+  })), __jsx(_components_Header_js__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], {
+    types: types
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Row"], {
     className: "home-main",
     type: "flex",
     justify: "center"
@@ -602,7 +605,8 @@ async function getStaticProps(context) {
   return {
     props: {
       listContent: res.data.data,
-      type: typeRes.data.filter(item => String(context.params.id) === String(item.orderNum))[0]
+      type: typeRes.data.filter(item => String(context.params.id) === String(item.orderNum))[0],
+      types: typeRes.data
     }
   };
 }
@@ -911,26 +915,17 @@ function useProxy(initialState) {
   return [proxyState, state];
 }
 
-const Header = () => {
-  const {
-    0: types,
-    1: setTypes
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
-  let [proxyState, state] = useProxy({
-    count: 0
-  });
-  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])();
-  console.log("render");
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    const getTypeInfoFn = async () => {
-      return await Object(_api_index__WEBPACK_IMPORTED_MODULE_4__[/* getTypeInfo */ "c"])();
-    };
-
-    getTypeInfoFn().then(res => {
-      console.log(res.data);
-      setTypes(res.data);
-    });
-  }, []);
+const Header = ({
+  types = []
+}) => {
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])(); // useEffect(() => {
+  //   const getTypeInfoFn = async () => {
+  //     return await getTypeInfo();
+  //   };
+  //   getTypeInfoFn().then((res) => {
+  //     setTypes(res.data);
+  //   });
+  // }, []);
 
   function getIcon(key) {
     switch (key) {

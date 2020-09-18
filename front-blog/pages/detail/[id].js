@@ -22,7 +22,7 @@ import Footer from "comp/Footer.js";
 import Tocify from 'comp/tocify.tsx'
 
 
- function Detail({content,type}) {
+ function Detail({content,type,types}) {
 
  const {markdownVal,tocify} =  useMemo(()=>{
     const renderer = new marked.Renderer();
@@ -87,7 +87,7 @@ import Tocify from 'comp/tocify.tsx'
           content="width=device-width, initial-scale=1, maximum-scale=1"
         ></meta>
       </Head>
-      <Header />
+      <Header types={types} />
       <Row className="home-main" type="flex" justify="center">
         <Col className="home-main-left" xs={23} sm={23} md={16} lg={16} xl={16}>
             <div className="detail-bread">
@@ -140,7 +140,8 @@ export async function  getStaticProps (context){
      return {
         props:{
           content:res.data.data[0],
-          type:typeRes.data.filter(item=> String(res.data.data[0].typeId) === String(item.orderNum))[0]
+          type:typeRes.data.filter(item=> String(res.data.data[0].typeId) === String(item.orderNum))[0],
+          types:typeRes.data
         }
      }
 }

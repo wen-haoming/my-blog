@@ -7,7 +7,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import {Row,Col,List, Divider} from 'antd'
 import { CalendarOutlined ,FolderOutlined,FireOutlined} from '@ant-design/icons';
-import {getArticleList} from '../api/index'
+import {getArticleList,getTypeInfo} from '../api/index'
 import {useRouter} from 'next/router'
 
 import marked from 'marked'
@@ -18,7 +18,7 @@ import Header from '../components/Header';
 import Author from '../components/Author';
 import Footer from '../components/Footer';
 
-const Home =  ({list})=>{
+const Home =  ({list,types})=>{
     const [ mylist , setMylist ] = useState(list)
     const router = useRouter()
    const renderer = new marked.Renderer();
@@ -43,7 +43,7 @@ const Home =  ({list})=>{
           <title>Home</title>
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
         </Head>
-       <Header/>
+       <Header types={types} />
        <Row className="home-main" type="flex" justify="center">
            <Col className="home-main-left" xs={23} sm={23} md={16} lg={16} xl={16}>
             <List 
@@ -85,9 +85,12 @@ export async function getStaticProps (context){
        return getArticleList()
    }
    let res =  await getData()
+    let typesRes =   await getTypeInfo();
+     
       return {
           props:{
             list:res.data.data,
+            types:typesRes.data
           }
       }
 }

@@ -31,20 +31,17 @@ function useProxy(initialState) {
   return [proxyState, state];
 }
 
-const Header = () => {
-  const [types, setTypes] = useState([]);
-  let [proxyState, state] = useProxy({ count: 0 });
+const Header = ({types = []}) => {
   const router = useRouter();
-  console.log("render");
-  useEffect(() => {
-    const getTypeInfoFn = async () => {
-      return await getTypeInfo();
-    };
-    getTypeInfoFn().then((res) => {
-      console.log(res.data);
-      setTypes(res.data);
-    });
-  }, []);
+
+  // useEffect(() => {
+  //   const getTypeInfoFn = async () => {
+  //     return await getTypeInfo();
+  //   };
+  //   getTypeInfoFn().then((res) => {
+  //     setTypes(res.data);
+  //   });
+  // }, []);
 
   function getIcon(key) {
     switch (key) {
