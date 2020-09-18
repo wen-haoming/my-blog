@@ -5,6 +5,9 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
+  history:{
+     type:"hash"
+  },
   publicPath:'/back/',
   routes: [
     { path: '/login', exact: false, component: '@/pages/login' },

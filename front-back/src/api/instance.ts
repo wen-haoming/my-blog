@@ -5,18 +5,15 @@ import {message} from 'antd'
 
 const config:AxiosRequestConfig = {};
   config.baseURL = "http://127.0.0.1:7002/";
-  config.withCredentials = true
+  config.withCredentials = true;
 
 const instance = axios.create(config);
 
 instance.interceptors.response.use((response)=>{
   return response
 },(response)=>{
-  if(response.data&&response.data.data && response.data.data.data.status === 'fail'){
-    history.push('/login')
-  }else{
-    message.error(response.status)
-  }
+  history.push('/login')
+  message.error('接口错误')
 })
 
 export default instance;

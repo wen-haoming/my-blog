@@ -52,7 +52,7 @@ module.exports = (appInfo) => {
 
   config.cors = {
     origin:  ()=>{  
-      return  "http://127.0.0.1:3000"},
+      return  "http://127.0.0.1:8000"},
     credentials: true, //允许Cook可以跨域
     allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS",
   };

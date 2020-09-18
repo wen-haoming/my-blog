@@ -1,17 +1,15 @@
 import instance from './instance';
 
 export const postLogin = async (data:any)=>{
-    return  await instance.post('login/',data,{
-      withCredentials:true
-    })
+    return  await instance.post('/login',data)
 }
 
 export const getTypeInfo = async ()=>{
-  return  await instance.get('typeInfo/')
+  return  await instance.get('typeInfo')
 }
 
 export const postAddArticle = async (data:any)=>{
-   return await instance.post('addArticle/',data,{
+   return await instance.post('addArticle',data,{
      withCredentials:true
    })
 }
