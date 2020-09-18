@@ -3,9 +3,6 @@ import axios from 'axios'
 // import axios from "axios";
 
 const config = {};
-if(process.env.NODE_ENV === 'production'){
-  config.baseURL = "/";
-}else{
   if (typeof window === "undefined") {
     //服务器
     config.baseURL = "http://127.0.0.1:7002/";
@@ -14,7 +11,6 @@ if(process.env.NODE_ENV === 'production'){
     config.baseURL = "http://127.0.0.1:7002/";
   //   config.baseURL = "http://yuanjin.tech:5005/";
   }
-}
 
 
 
