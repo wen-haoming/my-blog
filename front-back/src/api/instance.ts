@@ -4,7 +4,11 @@ import {message} from 'antd'
 // import axios from "axios";
 
 const config:AxiosRequestConfig = {};
-  config.baseURL = "http://127.0.0.1:7002/";
+  if(  process.env.NODE_ENV === 'development'){
+    config.baseURL = "http://127.0.0.1:7002/";
+  }else{
+    config.baseURL = "http://47.107.232.30:7002/";
+  }
   config.withCredentials = true;
 
 const instance = axios.create(config);
