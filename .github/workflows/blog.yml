@@ -21,7 +21,7 @@ jobs:
           script: 
                   tar zxvf  /home/blog/blog-zip.tar &&
                     cd /home/blog/blog && 
-                     yarn install  &&
-                     yarn build &&
-                     yarn start 
+                    yarn install  &&
+                    yarn build &&
+                    yarn start 
                  
