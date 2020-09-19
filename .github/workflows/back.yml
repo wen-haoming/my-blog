@@ -1,0 +1,20 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - master # default branch
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn bootstrap
+      - name: Copy  front-back
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ./front-back/dist
+          remote: /usr/share/nginx/html/back
+          host: ${{secrets.HOST}}
+          username: root
+          password: ${{secrets.PASSWORD}}
