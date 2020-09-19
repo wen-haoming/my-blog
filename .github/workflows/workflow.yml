@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: yarn bootstrap
-      - run: tar -czvf ./front-blog ./blog-zip
-      - run: tar -czvf ./server2 ./server-zip
+      - run: tar -czvf blog-zip.zip ./front-blog 
+      - run: tar -czvf server-zip.zip ./server2 
       - name: Copy  front-back
         uses: garygrossgarten/github-action-scp@release
         with:
