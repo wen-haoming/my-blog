@@ -23,7 +23,7 @@ jobs:
       - name: Copy blog
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ./blog-zip
+          local: ./blog-zip.zip
           remote: /home/blog/blog
           host: ${{secrets.HOST}}
           username: root
@@ -31,7 +31,7 @@ jobs:
       - name: Copy  server
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ./server-zip
+          local: ./server-zip.zip
           remote: /home/blog/server
           host: ${{secrets.HOST}}
           username: root
@@ -46,8 +46,8 @@ jobs:
           script: 
                   fuser -k -n tcp 7002 &&
                   fuser -k -n tcp 3000 &&
-                  tar /home/blog/blog &&
-                  tar /home/blog/server && 
+                  tar /home/blog/blog-zip.zip &&
+                  tar /home/blog/server-zip.zip && 
                    cd /home/blog/server &&
                    yarn install &&
                    yarn stop &&
