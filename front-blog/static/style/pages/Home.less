@@ -2,6 +2,36 @@
 
 @v:home;
 
+@keyframes fade{
+   0%{
+      opacity: 0;
+      transform: translateY(5vh);
+      visibility: hidden;
+      transition: opacity 1200ms ease-out, transform 600ms ease-out,
+      visibility 1200ms ease-out;
+      will-change: opacity, transform, visibility; // 动画性能优化，页面不是特别复杂情况下不要使用，详见：这里
+   }
+   100%{
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+   }
+
+}
+
+.fade-in-section {
+   opacity: 0;
+   transform: translateY(20vh);
+   visibility: hidden;
+   transition: opacity 1200ms ease-out, transform 600ms ease-out,
+   visibility 1200ms ease-out;
+   will-change: opacity, transform, visibility; // 动画性能优化，页面不是特别复杂情况下不要使用，详见：这里　　
+ }
+ .fade-in-section.is-visible {
+   opacity: 1;
+   transform: none;
+   visibility: visible;
+ }
 
 .@{v}-main{
      padding-top:10px;
@@ -13,6 +43,7 @@
           padding: 15px;
           background-color:#fff;
           margin-right: 10px;
+          animation: fade 0.8s;
      }
     .list-title{
          font-size: @h3-font-size;

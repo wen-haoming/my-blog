@@ -22,7 +22,7 @@ import Footer from "comp/Footer.js";
 import Tocify from 'comp/tocify.tsx'
 
 
- function Detail({content,type,types}) {
+ const  Detail = ({content,type}) => {
 
  const {markdownVal,tocify} =  useMemo(()=>{
     const renderer = new marked.Renderer();
@@ -75,19 +75,8 @@ import Tocify from 'comp/tocify.tsx'
       </Breadcrumb>
     </div>
   );
-
- 
-
   return (
     <>
-      <Head>
-        <title>Home</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
-        ></meta>
-      </Head>
-      <Header types={types} />
       <Row className="home-main" type="flex" justify="center">
         <Col className="home-main-left" xs={23} sm={23} md={16} lg={16} xl={16}>
             <div className="detail-bread">

@@ -22,7 +22,7 @@ import Header from "comp/Header.js";
 import Author from "comp/Author.js";
 import Footer from "comp/Footer.js";
 
-export default ({ listContent, type,types }) => {
+const ListContent =  ({ listContent, type,types }) => {
   const [mylist, setMylist] = useState(listContent);
   const router = useRouter();
 
@@ -63,14 +63,8 @@ export default ({ listContent, type,types }) => {
 
   return (
     <>
-      <Head>
-        <title>Home</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
-        ></meta>
-      </Head>
-      <Header types={types} />
+      
+      {/* <Header types={types} /> */}
       <Row className="home-main" type="flex" justify="center">
         <Col className="home-main-left" xs={23} sm={23} md={16} lg={16} xl={16}>
           <List
@@ -141,3 +135,5 @@ export async function getStaticProps(context) {
     },
   };
 }
+
+export default ListContent
