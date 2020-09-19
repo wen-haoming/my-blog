@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - run: yarn bootstrap
+      # - run: yarn bootstrap
       - run: tar -czvf blog-zip.zip ./front-blog 
       - run: tar -czvf server-zip.zip ./server2 
       # - name: Copy  front-back
