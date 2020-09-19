@@ -50,9 +50,10 @@ module.exports = (appInfo) => {
     domainWhiteList: ["*"],
   };
 
+
+
   config.cors = {
-    origin:  ()=>{  
-      return  "http://127.0.0.1:8000"},
+    origin:  process.env.EGG_SERVER_ENV === 'dev'?'http://127.0.0.1:8000':'http://47.107.232.30:7002',
     credentials: true, //允许Cook可以跨域
     allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS",
   };
