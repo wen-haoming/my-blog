@@ -24,7 +24,7 @@ jobs:
         uses: garygrossgarten/github-action-scp@release
         with:
           local: blog-zip.tar
-          remote: /home/blog/
+          remote: /home/blog/blog-zip.tar
           host: ${{secrets.HOST}}
           username: root
           password: ${{secrets.PASSWORD}}
@@ -32,7 +32,7 @@ jobs:
         uses: garygrossgarten/github-action-scp@release
         with:
           local: server-zip.tar
-          remote: /home/blog/
+          remote: /home/blog/server-zip.tar
           host: ${{secrets.HOST}}
           username: root
           password: ${{secrets.PASSWORD}}
@@ -44,11 +44,10 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: 
-                  rm -rf /home/blog/blog /home/blog/server &&
                   tar zxvf /home/blog/blog-zip.tar &&
-                  mv front-blog /home/blog/blog &&
+                  mv /home/blog/front-blog /home/blog/blog &&
                   tar zxvf /home/blog/server-zip.tar && 
-                  mv server2 /home/blog/server &&
+                  mv /home/blog/server2 /home/blog/server &&
                    cd /home/blog/server &&
                    yarn install &&
                    yarn stop &&
