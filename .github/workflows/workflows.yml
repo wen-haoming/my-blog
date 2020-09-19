@@ -47,9 +47,9 @@ jobs:
                   cd /home/blog && 
                   tar zxvf /home/blog/blog-zip.tar &&
                   tar zxvf /home/blog/server-zip.tar && 
-                  mv /home/blog/front-blog /home/blog/blog &&
-                  mv /home/blog/server2 /home/blog/server &&
-                  rm -rf blog-zip.tar server-zip.tar && 
+                  rm -rf blog server && 
+                  mv  front-blog blog &&
+                  mv  server2 server &&
                    cd /home/blog/server &&
                    yarn install &&
                    yarn stop &&
