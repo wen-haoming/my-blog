@@ -44,10 +44,10 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: 
-                  tar zxvf  /home/blog/blog-zip.tar &&
-                  mv front-blog blog &&
+                  tar zxvf /home/blog/blog-zip.tar &&
+                  mv front-blog /home/blog/blog &&
                   tar zxvf /home/blog/server-zip.tar && 
-                  mv server2 server &&
+                  mv server2 /home/blog/server &&
                    cd /home/blog/server &&
                    yarn install &&
                    yarn stop &&
