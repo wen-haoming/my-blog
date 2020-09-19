@@ -18,9 +18,9 @@ jobs:
           host: ${{secrets.HOST}}
           username: root
           password: ${{secrets.PASSWORD}}
-          script:   rm -rf /home/blog/blog &&
-                    tar zxvf  /home/blog/blog-zip.tar &&
-                    mv /home/blog/front-blog  /home/blog/blog &&
+          script:   rm -rf /home/blog/blog/* &&
+                    tar zxvf /home/blog/blog-zip.tar &&
+                    mv front-blog/*  /home/blog/blog &&
                     cd /home/blog/blog && 
                     yarn install  &&
                     yarn build &&
