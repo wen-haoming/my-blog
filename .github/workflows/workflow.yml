@@ -48,11 +48,11 @@ jobs:
                   fuser -k -n tcp 3000 &&
                   tar /home/blog/blog-zip.zip &&
                   tar /home/blog/server-zip.zip && 
-                   cd /home/blog/server &&
-                   yarn install &&
-                   yarn stop &&
-                   yarn start &&
-                   cd /home/blog/blog && 
-                   yarn install  &&
-                   yarn build &&
-                   yarn start 
+                  #  cd /home/blog/server &&
+                  #  yarn install &&
+                  #  yarn stop &&
+                  #  yarn start &&
+                  #  cd /home/blog/blog && 
+                  #  yarn install  &&
+                  #  yarn build &&
+                  #  yarn start 
