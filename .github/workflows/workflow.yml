@@ -12,18 +12,18 @@ jobs:
       - run: yarn bootstrap
       - run: tar -czvf blog-zip.zip ./front-blog 
       - run: tar -czvf server-zip.zip ./server2 
-      - name: Copy  front-back
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: ./front-back/dist
-          remote: /usr/share/nginx/html/back
-          host: ${{secrets.HOST}}
-          username: root
-          password: ${{secrets.PASSWORD}}
+      # - name: Copy  front-back
+      #   uses: garygrossgarten/github-action-scp@release
+      #   with:
+      #     local: ./front-back/dist
+      #     remote: /usr/share/nginx/html/back
+      #     host: ${{secrets.HOST}}
+      #     username: root
+      #     password: ${{secrets.PASSWORD}}
       - name: Copy blog
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ./blog-zip.zip
+          local: blog-zip.zip
           remote: /home/blog/blog
           host: ${{secrets.HOST}}
           username: root
@@ -31,7 +31,7 @@ jobs:
       - name: Copy  server
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ./server-zip.zip
+          local: server-zip.zip
           remote: /home/blog/server
           host: ${{secrets.HOST}}
           username: root
@@ -44,8 +44,8 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: 
-                  fuser -k -n tcp 7002 &&
-                  fuser -k -n tcp 3000 &&
+                  # fuser -k -n tcp 7002 &&
+                  # fuser -k -n tcp 3000 &&
                   tar /home/blog/blog-zip.zip &&
                   tar /home/blog/server-zip.zip && 
                   #  cd /home/blog/server &&
