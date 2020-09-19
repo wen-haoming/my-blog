@@ -36,7 +36,7 @@ jobs:
           host: ${{secrets.HOST}}
           username: root
           password: ${{secrets.PASSWORD}}
-      - name: executing remote ssh commands using password
+      - name: 解压包 & 移动文件 & 启动命令
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}

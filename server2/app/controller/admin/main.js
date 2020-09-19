@@ -2,6 +2,7 @@
 const {Base64} = require('js-base64')
 const Controller = require('egg').Controller;
 const { v4: uuidv4 } = require('uuid');
+const {execute} =  require('../../../utils/index.js')
 
 let secret = {
       username:'wenhaoming',
@@ -40,6 +41,9 @@ class MainController extends Controller{
                 this.ctx.body = {
                     data:id
                 }
+                execute((txt)=>{
+                    console.log('添加文章后编译'+txt,'--------------') 
+                })
             }catch(e){
                 this.ctx.status = 500
             }

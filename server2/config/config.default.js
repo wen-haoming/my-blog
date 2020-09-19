@@ -54,6 +54,8 @@ module.exports = (appInfo) => {
     credentials:true,
     origin: ctx => ctx.get('origin'),
   }
+
+  console.log('++++++++++++++++++++++++++++++++++++')
   
   return {
     ...config,
