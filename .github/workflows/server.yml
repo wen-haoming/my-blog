@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - run: yarn bootstrap
       - run: tar -czvf server-zip.tar ./server2 
       - name: Copy  server
         uses: garygrossgarten/github-action-scp@release
