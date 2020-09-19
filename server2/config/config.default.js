@@ -50,10 +50,8 @@ module.exports = (appInfo) => {
     domainWhiteList: ["*"],
   };
 
-
-
   config.cors = {
-    credentials: true,
+    credentials:true,
     origin: ctx => ctx.get('origin'),
   }
   
