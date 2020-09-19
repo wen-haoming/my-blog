@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - run: yarn bootstrap
-      - run: tar -czvf blog-zip.zip ./front-blog 
-      - run: tar -czvf server-zip.zip ./server2 
+      - run: tar -czvf blog-zip.tar ./front-blog 
+      - run: tar -czvf server-zip.tar ./server2 
       # - name: Copy  front-back
       #   uses: garygrossgarten/github-action-scp@release
       #   with:
@@ -23,7 +23,7 @@ jobs:
       - name: Copy blog
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ./blog-zip.zip
+          local: ./blog-zip.tar
           remote: /home/blog/blog
           host: ${{secrets.HOST}}
           username: root
@@ -31,7 +31,7 @@ jobs:
       - name: Copy  server
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ./server-zip.zip
+          local: ./server-zip.tar
           remote: /home/blog/server
           host: ${{secrets.HOST}}
           username: root
@@ -46,8 +46,8 @@ jobs:
           script: 
                   # fuser -k -n tcp 7002 &&
                   # fuser -k -n tcp 3000 &&
-                  tar zxvf  /home/blog/blog-zip.zip &&
-                  tar zxvf /home/blog/server-zip.zip
+                  tar zxvf  /home/blog/blog-zip.tar &&
+                  tar zxvf /home/blog/server-zip.tar
                   #  cd /home/blog/server &&
                   #  yarn install &&
                   #  yarn stop &&
