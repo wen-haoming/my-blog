@@ -12,10 +12,6 @@ const config = {};
     //   config.baseURL = "http://yuanjin.tech:5005/";
     }
 
- 
-console.log(process.env,'=========================')
-
-
 const instance = axios.create(config);
 
 export default instance;
