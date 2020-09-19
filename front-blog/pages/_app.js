@@ -6,7 +6,6 @@ import {ArrowUpOutlined} from  '@ant-design/icons';
 import Header from "comp/Header.js";
 import Head from 'next/head'
 import{getTypeInfo} from '../api/index'
-import {useReactive} from 'proxy-hooks'
 
 const style = {
   height: 40,
