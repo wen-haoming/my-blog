@@ -50,7 +50,6 @@ function MyApp({ Component, pageProps,types }) {
 }
 
 export async function getInitialProps(context) {
-    console.log(typeRes,'=======')
       let typeRes = await getTypeInfo()
   return {
     props: {
