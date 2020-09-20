@@ -23,7 +23,6 @@ import Tocify from 'comp/tocify.tsx'
 
 
  const  Detail = ({content,type}) => {
-
  const {markdownVal,tocify} =  useMemo(()=>{
     const renderer = new marked.Renderer();
 
@@ -49,7 +48,6 @@ import Tocify from 'comp/tocify.tsx'
         }); 
    
         let html = marked(content.article_content || '') 
-
         return {
           markdownVal:html,
           tocify
@@ -57,23 +55,23 @@ import Tocify from 'comp/tocify.tsx'
   },[])
 
   let header = (
-    <div>
+    <>
       <Breadcrumb>
         <Breadcrumb.Item>
         <Link href="/">
-           <a ><span className="bread-txt">首页</span> </a>
+           <a><span className="title-txt">首页</span></a>
         </Link>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
         <Link  href="/list/[id]" as={`/list/${type.orderNum}`}>
-          <a> <span className="bread-txt">{type.typeName}</span> </a>
+          <a> <span className="title-txt">{type.typeName}</span> </a>
         </Link>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
-          <span className="bread-txt">{content.title}</span>
+          <span className="title-txt">{content.title}</span>
         </Breadcrumb.Item>
       </Breadcrumb>
-    </div>
+    </>
   );
   return (
     <>
@@ -85,22 +83,20 @@ import Tocify from 'comp/tocify.tsx'
             <div className="detail-title">
                 {content.title}
             </div>
-            <div className="detail-sub-title">
-                <div className="list-sub-title">
-                   <div className="sub-item">
+            <Row className="detail-sub-title" justify="center">
+                   <Col className="title-txt" xs={8} sm={8} md={8} lg={8} xl={8}>
                     <CalendarOutlined />
-                      <span className="sub-txt">2020/9/2</span>
-                   </div>
-                   <div className="sub-item">
+                      <span className="sub-txt">{content.addTime}</span>
+                   </Col>
+                   <Col className="title-txt" xs={8} sm={8} md={8} lg={8} xl={8}>
                    <FolderOutlined />
-                      <span className="sub-txt">2020/9/2</span>
-                   </div>
-                   <div className="sub-item">
+                      <span className="sub-txt">{type.typeName}</span>
+                   </Col>
+                   <Col className="title-txt" xs={8} sm={8} md={8} lg={8} xl={8}>
                    <FireOutlined />
-                      <span className="sub-txt">2020/9/2</span>
-                   </div>
-               </div>
-            </div>
+                      <span className="sub-txt">{content.view_count}</span>
+                   </Col>
+            </Row>
             <div className="detail-content" dangerouslySetInnerHTML={{__html: markdownVal}}>
             </div>
         </Col>
@@ -116,13 +112,12 @@ import Tocify from 'comp/tocify.tsx'
           </Affix>
         </Col>
       </Row>
-      <Footer />
     </>
   );
 }
 
 
-export async function  getStaticProps (context){
+export async function getStaticProps (context){
  
   let res = await getArticleById(context.params.id)
   let typeRes = await getTypeInfo()

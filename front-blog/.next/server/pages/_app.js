@@ -156,7 +156,6 @@ function withRouter(ComposedComponent) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInitialProps", function() { return getInitialProps; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("8Bbg");
@@ -171,17 +170,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("xnum");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _api_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("bMwp");
-/* harmony import */ var proxy_hooks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("V4WE");
-/* harmony import */ var proxy_hooks__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(proxy_hooks__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_Footer_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("8lYe");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -207,26 +198,10 @@ function MyApp({
   pageProps,
   types
 }) {
-  const {
-    0: globalTypes,
-    1: setGlobalTypes
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    types: []
-  });
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    (async () => {
-      let typeRes = await Object(_api_index__WEBPACK_IMPORTED_MODULE_7__[/* getTypeInfo */ "c"])();
-      setGlobalTypes(_objectSpread(_objectSpread({}, globalTypes), {}, {
-        types: typeRes.data
-      }));
-    })();
-  }, []);
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_6___default.a, null, __jsx("title", null, "Home"), __jsx("meta", {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_6___default.a, null, __jsx("title", null, "whm.zone"), __jsx("meta", {
     name: "viewport",
     content: "width=device-width, initial-scale=1, maximum-scale=1"
-  })), __jsx(_components_Header_js__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], {
-    types: globalTypes.types
-  }), __jsx(Component, pageProps), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["BackTop"], null, __jsx("div", {
+  })), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Layout"], null, __jsx(_components_Header_js__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], null), __jsx(Component, pageProps), __jsx(_components_Footer_js__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"], null)), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["BackTop"], null, __jsx("div", {
     style: style
   }, __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_4__["ArrowUpOutlined"], {
     style: {
@@ -236,15 +211,6 @@ function MyApp({
   }))));
 }
 
-async function getInitialProps(context) {
-  console.log(typeRes, '=======');
-  let typeRes = await Object(_api_index__WEBPACK_IMPORTED_MODULE_7__[/* getTypeInfo */ "c"])();
-  return {
-    props: {
-      types: typeRes.data
-    }
-  };
-}
 /* harmony default export */ __webpack_exports__["default"] = (MyApp);
 
 /***/ }),
@@ -504,6 +470,62 @@ module.exports = __webpack_require__("B5Ud")
 
 /***/ }),
 
+/***/ "8lYe":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _static_style_components_Footer_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("rCmJ");
+/* harmony import */ var _static_style_components_Footer_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_static_style_components_Footer_less__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("Exp3");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Author__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("Yo3B");
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const {
+  Header,
+  Footer,
+  Sider,
+  Content
+} = antd__WEBPACK_IMPORTED_MODULE_2__["Layout"];
+
+const FooterComp = () => {
+  return __jsx(Footer, {
+    className: "footer"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Divider"], null), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+    xs: 24,
+    sm: 24,
+    md: 0,
+    lg: 0,
+    xl: 0
+  }, __jsx(_Author__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], null))), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+    justify: "center",
+    gutter: [0, 0]
+  }, __jsx("span", {
+    className: "footer-space"
+  }, "Designed by \u6E29\u6D69\u660E"), __jsx("span", {
+    className: "footer-space"
+  }, "Powerd by ", __jsx("a", {
+    href: "https://ant.design/index-cn"
+  }, "Ant-design"), " & ", __jsx("a", {
+    href: "https://www.nextjs.cn/"
+  }, "nextjs"), " "), __jsx("span", {
+    className: "footer-space"
+  }, "Copyright\xA9 2020 \u6E29\u6D69\u660E"), __jsx("span", {
+    className: "footer-space"
+  }, __jsx("a", {
+    href: "https://beian.miit.gov.cn/#/Integrated/index"
+  }, "\u7CA4ICP\u590720071658\u53F7"))));
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (FooterComp);
+
+/***/ }),
+
 /***/ "B5Ud":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -678,13 +700,6 @@ module.exports = _interopRequireDefault;
 
 /***/ }),
 
-/***/ "V4WE":
-/***/ (function(module, exports) {
-
-module.exports = require("proxy-hooks");
-
-/***/ }),
-
 /***/ "X24+":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -845,6 +860,116 @@ function getRouteRegex(normalizedRoute) {
 
 /***/ }),
 
+/***/ "Yo3B":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("Exp3");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _static_style_components_Author_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("zMww");
+/* harmony import */ var _static_style_components_Author_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_static_style_components_Author_less__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("nZwT");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__);
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const Author = () => {
+  let contactComp = __jsx("div", {
+    className: "author-contact"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Popover"], {
+    content: __jsx("a", {
+      href: "https://github.com/wen-haoming"
+    }, "github "),
+    arrowPointAtCenter: true,
+    trigger: "hover"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+    size: 28,
+    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["GithubOutlined"], null),
+    className: "account"
+  })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Popover"], {
+    content: __jsx("span", {
+      className: "author-introduction"
+    }, "\u90AE\u7BB1: 435203093@qq.com"),
+    arrowPointAtCenter: true,
+    trigger: "hover"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+    size: 28,
+    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["MailOutlined"], null),
+    className: "account"
+  })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Popover"], {
+    content: __jsx("span", {
+      className: "author-introduction"
+    }, "\u516C\u4F17\u53F7: whm_zone"),
+    arrowPointAtCenter: true,
+    trigger: "hover"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+    size: 28,
+    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["WechatOutlined"], null),
+    className: "account"
+  })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Popover"], {
+    content: __jsx("img", {
+      width: "200",
+      height: "250",
+      src: "../static/img/my.jpg"
+    }),
+    arrowPointAtCenter: true,
+    trigger: "hover"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+    size: 28,
+    icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["WechatOutlined"], null),
+    className: "account"
+  })));
+
+  return __jsx("div", {
+    className: "author-div comm-box"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 12,
+    sm: 24,
+    md: 24,
+    lg: 24,
+    xl: 24
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+    size: 80,
+    src: "../static/img/touxiang.jpg"
+  })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 12,
+    sm: 0,
+    md: 0,
+    lg: 0,
+    xl: 0
+  }, contactComp)), __jsx("div", {
+    className: "author-introduction"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 0,
+    sm: 0,
+    md: 24,
+    lg: 24,
+    xl: 24
+  }, "\u5206\u4EAB\u4E00\u4E9B")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 0,
+    sm: 0,
+    md: 24,
+    lg: 24,
+    xl: 24
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Divider"], null, "\u793E\u4EA4\u8D26\u53F7"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 0,
+    sm: 0,
+    md: 24,
+    lg: 24,
+    xl: 24
+  }, contactComp))));
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Author);
+
+/***/ }),
+
 /***/ "b0oO":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -873,39 +998,18 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-function useProxy(initialState) {
+const HeaderComp = () => {
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])();
   const {
-    0: state,
-    1: setState
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState);
-  let proxyState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => {
-    let proxyState = new Proxy(initialState, {
-      set(target, name, value, property) {
-        setState({});
-        return Reflect.set(target, name, value, property);
-      },
-
-      get(target, name, property) {
-        return Reflect.get(target, name, property);
-      }
-
-    });
-    return proxyState;
+    0: types,
+    1: setTypes
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    void async function () {
+      let typeRes = await Object(_api_index__WEBPACK_IMPORTED_MODULE_4__[/* getTypeInfo */ "c"])();
+      setTypes(typeRes.data);
+    }();
   }, []);
-  return [proxyState, state];
-}
-
-const Header = ({
-  types = []
-}) => {
-  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])(); // useEffect(() => {
-  //   const getTypeInfoFn = async () => {
-  //     return await getTypeInfo();
-  //   };
-  //   getTypeInfoFn().then((res) => {
-  //     setTypes(res.data);
-  //   });
-  // }, []);
 
   function getIcon(key) {
     switch (key) {
@@ -932,9 +1036,9 @@ const Header = ({
     offset: 0.5,
     xs: 17,
     sm: 17,
-    md: 14,
-    lg: 14,
-    xl: 14
+    md: 11,
+    lg: 11,
+    xl: 11
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/"
   }, __jsx("a", null, __jsx("span", {
@@ -942,9 +1046,9 @@ const Header = ({
   }, "whm.zone")))), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
     xs: 5,
     sm: 5,
-    md: 7,
-    lg: 7,
-    xl: 7
+    md: 9,
+    lg: 9,
+    xl: 9
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Menu"], {
     mode: "horizontal"
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Menu"].Item, {
@@ -958,7 +1062,7 @@ const Header = ({
   })))));
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Header);
+/* harmony default export */ __webpack_exports__["a"] = (HeaderComp);
 
 /***/ }),
 
@@ -2466,6 +2570,13 @@ module.exports = require("@ant-design/icons");
 
 /***/ }),
 
+/***/ "rCmJ":
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "wkBG":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2479,6 +2590,13 @@ exports.__esModule=true;exports.normalizePathSep=normalizePathSep;exports.denorm
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
+
+/***/ }),
+
+/***/ "zMww":
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

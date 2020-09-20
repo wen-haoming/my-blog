@@ -398,28 +398,6 @@ function formatUrl(urlObj) {
 
 /***/ }),
 
-/***/ "8lYe":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _static_style_components_Footer_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("rCmJ");
-/* harmony import */ var _static_style_components_Footer_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_static_style_components_Footer_less__WEBPACK_IMPORTED_MODULE_1__);
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-const Footer = () => {
-  return __jsx("div", {
-    className: "footer"
-  }, __jsx("div", null, "\u7CFB\u7EDF\u662F\u7531React+Node+ Ant Design"), __jsx("div", null, "whm.zone"));
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Footer);
-
-/***/ }),
-
 /***/ "9Oib":
 /***/ (function(module, exports) {
 
@@ -449,13 +427,6 @@ module.exports = require("marked");
 /***/ }),
 
 /***/ "I6F5":
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "LFS0":
 /***/ (function(module, exports) {
 
 
@@ -500,12 +471,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(highlight_js__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var highlight_js_styles_monokai_sublime_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("bi5S");
 /* harmony import */ var highlight_js_styles_monokai_sublime_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(highlight_js_styles_monokai_sublime_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("b0oO");
-/* harmony import */ var _components_Author__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("Yo3B");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__("8lYe");
+/* harmony import */ var _components_Author__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("Yo3B");
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
 
 
 
@@ -560,24 +527,40 @@ const Home = ({
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["List"], {
     dataSource: mylist,
     itemLayout: "vertical",
-    header: __jsx("div", null, "\u6700\u65B0\u65E5\u5FD7"),
+    header: __jsx("span", {
+      className: "title-txt"
+    }, "\u6700\u65B0\u65E5\u5FD7"),
     renderItem: item => __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["List"].Item, null, __jsx("a", {
       onClick: () => {
-        router.push('/detail/[id]', `/detail/${item.id}`);
+        router.push("/detail/[id]", `/detail/${item.id}`);
       },
       className: "list-title"
-    }, item.title), __jsx("div", {
-      className: "list-sub-title"
-    }, __jsx("div", {
-      className: "sub-item"
+    }, item.title), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Row"], {
+      className: "list-sub-title",
+      type: "flex",
+      justify: "center"
+    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+      xs: 8,
+      sm: 8,
+      md: 8,
+      lg: 8,
+      xl: 8
     }, __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__["CalendarOutlined"], null), __jsx("span", {
       className: "sub-txt"
-    }, item.addTime)), __jsx("div", {
-      className: "sub-item"
+    }, item.addTime)), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+      xs: 8,
+      sm: 8,
+      md: 8,
+      lg: 8,
+      xl: 8
     }, __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__["FolderOutlined"], null), __jsx("span", {
       className: "sub-txt"
-    }, item.typeName)), __jsx("div", {
-      className: "sub-item"
+    }, item.typeName)), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+      xs: 8,
+      sm: 8,
+      md: 8,
+      lg: 8,
+      xl: 8
     }, __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__["FireOutlined"], null), __jsx("span", {
       className: "sub-txt"
     }, item.view_count))), __jsx("div", {
@@ -593,7 +576,7 @@ const Home = ({
     md: 5,
     lg: 5,
     xl: 5
-  }, __jsx(_components_Author__WEBPACK_IMPORTED_MODULE_14__[/* default */ "a"], null))), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_15__[/* default */ "a"], null));
+  }, __jsx(_components_Author__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], null))));
 };
 
 async function getStaticProps(context) {
@@ -815,26 +798,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Author = () => {
-  return __jsx("div", {
-    className: "author-div comm-box"
-  }, __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
-    size: 80,
-    src: "../static/img/touxiang.jpg"
-  })), __jsx("div", {
-    className: "author-introduction"
-  }, "\u5206\u4EAB\u4E00\u4E9B", __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Divider"], null, "\u793E\u4EA4\u8D26\u53F7"), __jsx("a", {
-    href: "https://github.com/wen-haoming"
+  let contactComp = __jsx("div", {
+    className: "author-contact"
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Popover"], {
-    content: __jsx("span", {
-      className: "author-introduction"
-    }, "github"),
+    content: __jsx("a", {
+      href: "https://github.com/wen-haoming"
+    }, "github "),
     arrowPointAtCenter: true,
     trigger: "hover"
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
     size: 28,
     icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["GithubOutlined"], null),
     className: "account"
-  }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Popover"], {
+  })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Popover"], {
     content: __jsx("span", {
       className: "author-introduction"
     }, "\u90AE\u7BB1: 435203093@qq.com"),
@@ -866,127 +842,49 @@ const Author = () => {
     size: 28,
     icon: __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["WechatOutlined"], null),
     className: "account"
-  }))));
+  })));
+
+  return __jsx("div", {
+    className: "author-div comm-box"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 12,
+    sm: 24,
+    md: 24,
+    lg: 24,
+    xl: 24
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+    size: 80,
+    src: "../static/img/touxiang.jpg"
+  })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 12,
+    sm: 0,
+    md: 0,
+    lg: 0,
+    xl: 0
+  }, contactComp)), __jsx("div", {
+    className: "author-introduction"
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 0,
+    sm: 0,
+    md: 24,
+    lg: 24,
+    xl: 24
+  }, "\u5206\u4EAB\u4E00\u4E9B")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 0,
+    sm: 0,
+    md: 24,
+    lg: 24,
+    xl: 24
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Divider"], null, "\u793E\u4EA4\u8D26\u53F7"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: 0,
+    sm: 0,
+    md: 24,
+    lg: 24,
+    xl: 24
+  }, contactComp))));
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (Author);
-
-/***/ }),
-
-/***/ "b0oO":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _static_style_components_header_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("LFS0");
-/* harmony import */ var _static_style_components_header_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_static_style_components_header_less__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("Exp3");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("nZwT");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _api_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("bMwp");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("4Q3z");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("YFqc");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // import 'static/style/components/header.less'
-
-
-
-
-
-
-
-
-function useProxy(initialState) {
-  const {
-    0: state,
-    1: setState
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState);
-  let proxyState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => {
-    let proxyState = new Proxy(initialState, {
-      set(target, name, value, property) {
-        setState({});
-        return Reflect.set(target, name, value, property);
-      },
-
-      get(target, name, property) {
-        return Reflect.get(target, name, property);
-      }
-
-    });
-    return proxyState;
-  }, []);
-  return [proxyState, state];
-}
-
-const Header = ({
-  types = []
-}) => {
-  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])(); // useEffect(() => {
-  //   const getTypeInfoFn = async () => {
-  //     return await getTypeInfo();
-  //   };
-  //   getTypeInfoFn().then((res) => {
-  //     setTypes(res.data);
-  //   });
-  // }, []);
-
-  function getIcon(key) {
-    switch (key) {
-      case 1:
-        return __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["VideoCameraOutlined"], null);
-
-      case 2:
-        return __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["CoffeeOutlined"], null);
-
-      case 3:
-        return __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["SmileTwoTone"], null);
-
-      default:
-        return __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["VideoCameraOutlined"], null);
-    }
-  }
-
-  return __jsx("div", {
-    className: "header"
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Row"], {
-    type: "flex",
-    justify: "center"
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-    offset: 0.5,
-    xs: 17,
-    sm: 17,
-    md: 14,
-    lg: 14,
-    xl: 14
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
-    href: "/"
-  }, __jsx("a", null, __jsx("span", {
-    className: "header-logo"
-  }, "whm.zone")))), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-    xs: 5,
-    sm: 5,
-    md: 7,
-    lg: 7,
-    xl: 7
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Menu"], {
-    mode: "horizontal"
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Menu"].Item, {
-    key: "/",
-    onClick: () => router.push("/")
-  }, __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_3__["HomeOutlined"], null), "\u9996\u9875"), types.map(item => {
-    return __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Menu"].Item, {
-      key: item.orderNum,
-      onClick: () => router.push("/list/[id]", `/list/${item.orderNum}`)
-    }, getIcon(item.orderNum), item.typeName);
-  })))));
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Header);
 
 /***/ }),
 
@@ -2491,13 +2389,6 @@ function makePublicRouterInstance(router) {
 /***/ (function(module, exports) {
 
 module.exports = require("@ant-design/icons");
-
-/***/ }),
-
-/***/ "rCmJ":
-/***/ (function(module, exports) {
-
-
 
 /***/ }),
 

@@ -1,11 +1,12 @@
 import {useEffect,useState} from 'react'
 import App from "next/app";
 import "antd/dist/antd.css";
-import { BackTop } from "antd";
+import { BackTop,Layout } from "antd";
 import {ArrowUpOutlined} from  '@ant-design/icons';
 import Header from "comp/Header.js";
 import Head from 'next/head'
 import{getTypeInfo} from '../api/index'
+import Footer from "comp/Footer.js";
 
 const style = {
   height: 40,
@@ -18,28 +19,26 @@ const style = {
   fontSize: 14,
 };
 
-
-
 function MyApp({ Component, pageProps,types }) {
 
-    const [globalTypes,setGlobalTypes] = useState({
-        types:[]
-    })
+  
+  
 
-    useEffect(()=>{
-          ( async ()=>{
-            let typeRes = await getTypeInfo()
-            setGlobalTypes({...globalTypes,types:typeRes.data}) 
-          })()
-    },[])
   return (
     <>
-        <Head>
-          <title>Home</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
-        </Head>
-       <Header types={globalTypes.types} />
-      <Component {...pageProps} />
+    <Head>
+      <title>whm.zone</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
+    </Head>
+        <Layout>
+        {/* 头部组件 */}
+        <Header/>
+          {/* 中间内容组件 */}
+          <Component {...pageProps} />
+          {/* 底部组件 */}
+          <Footer/>
+        </Layout>
+      {/* 向上锚点 */}
       <BackTop>
         <div style={style}>
             <ArrowUpOutlined style={{fontSize:20,fontWeight:600}} />  
@@ -49,14 +48,7 @@ function MyApp({ Component, pageProps,types }) {
   );
 }
 
-export async function getInitialProps(context) {
-      let typeRes = await getTypeInfo()
-  return {
-    props: {
-      types:typeRes.data
-    },
-  };
-}
+
 
 
 export default MyApp;

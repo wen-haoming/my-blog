@@ -1,8 +1,17 @@
 @import '../global/variable.less';
 
-.footer{
-    text-align: center;
-    width: 100%;
-    padding:20px;
+@v:footer;
+
+.@{v}{
     color:@gray-500;
+    font-size: 9px;
+    background-color:@gray-100;
+    padding: 10px;
+    .bg{
+        background-color:@gray-100;
+    }
+    .@{v}-space{
+        margin-right: 10px;
+    }
 }
+

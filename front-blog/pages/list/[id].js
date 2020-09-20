@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "styleGlobal/comm.less";
 import "stylePages/Home.less";
 import "styleComp/md.less";
+import 'stylePages/Detail.less';
 
-import Head from "next/head";
-import Link from 'next/link'
+
 import { Row, Col, List, Breadcrumb } from "antd";
 import {
   CalendarOutlined,
@@ -18,9 +18,7 @@ import marked from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/monokai-sublime.css";
 
-import Header from "comp/Header.js";
 import Author from "comp/Author.js";
-import Footer from "comp/Footer.js";
 
 const ListContent =  ({ listContent, type,types }) => {
   const [mylist, setMylist] = useState(listContent);
@@ -47,15 +45,15 @@ const ListContent =  ({ listContent, type,types }) => {
     },
   });
   let header = (
-    <div>
+    <div className="detail-bread">
       <Breadcrumb>
         <Breadcrumb.Item onClick={() => router.push("/")}>
           <a>
-            <span className="bread-txt">首页</span>{" "}
+            <span className="title-txt">首页</span>{" "}
           </a>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
-              <span className="bread-txt">{type.typeName}</span>{" "}
+              <span className="title-txt">{type.typeName}</span>{" "}
         </Breadcrumb.Item>
       </Breadcrumb>
     </div>
@@ -63,8 +61,6 @@ const ListContent =  ({ listContent, type,types }) => {
 
   return (
     <>
-      
-      {/* <Header types={types} /> */}
       <Row className="home-main" type="flex" justify="center">
         <Col className="home-main-left" xs={23} sm={23} md={16} lg={16} xl={16}>
           <List
@@ -81,20 +77,20 @@ const ListContent =  ({ listContent, type,types }) => {
                 >
                   {item.title}
                 </a>
-                <div className="list-sub-title">
-                  <div className="sub-item">
-                    <CalendarOutlined />
-                    <span className="sub-txt">{item.addTime}</span>
-                  </div>
-                  <div className="sub-item">
-                    <FolderOutlined />
-                    <span className="sub-txt">{item.typeName}</span>
-                  </div>
-                  <div className="sub-item">
-                    <FireOutlined />
-                    <span className="sub-txt">{item.view_count}</span>
-                  </div>
-                </div>
+                <Row className="list-sub-title" type="flex" justify="center">
+                    <Col  xs={8} sm={8} md={8} lg={8} xl={8}>
+                      <CalendarOutlined />
+                      <span className="sub-txt">{item.addTime}</span>
+                    </Col>
+                    <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                      <FolderOutlined />
+                      <span className="sub-txt">{item.typeName}</span>
+                    </Col>
+                    <Col  xs={8} sm={8} md={8} lg={8} xl={8}>
+                      <FireOutlined />
+                      <span className="sub-txt">{item.view_count}</span>
+                    </Col>
+                  </Row>
                 <div
                   className="list-context"
                   dangerouslySetInnerHTML={{ __html: marked(item.introduce) }}
@@ -107,7 +103,6 @@ const ListContent =  ({ listContent, type,types }) => {
           <Author></Author>
         </Col>
       </Row>
-      <Footer />
     </>
   );
 };

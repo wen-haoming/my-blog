@@ -12,36 +12,17 @@ import { getTypeInfo } from "../api/index";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-function useProxy(initialState) {
-  const [state, setState] = useState(initialState);
-
-  let proxyState = useMemo(() => {
-    let proxyState = new Proxy(initialState, {
-      set(target, name, value, property) {
-        setState({});
-        return Reflect.set(target, name, value, property);
-      },
-      get(target, name, property) {
-        return Reflect.get(target, name, property);
-      },
-    });
-    return proxyState;
-  }, []);
-
-  return [proxyState, state];
-}
-
-const Header = ({types = []}) => {
+const HeaderComp = () => {
   const router = useRouter();
+  const [types,setTypes] = useState([])
 
-  // useEffect(() => {
-  //   const getTypeInfoFn = async () => {
-  //     return await getTypeInfo();
-  //   };
-  //   getTypeInfoFn().then((res) => {
-  //     setTypes(res.data);
-  //   });
-  // }, []);
+  useEffect(()=>{
+    void async function(){
+      let typeRes = await getTypeInfo();
+      setTypes(typeRes.data)
+    }()
+   
+  },[])
 
   function getIcon(key) {
     switch (key) {
@@ -56,17 +37,18 @@ const Header = ({types = []}) => {
     }
   }
 
+
   return (
     <div className="header">
       <Row type="flex" justify="center">
-        <Col offset={0.5} xs={17} sm={17} md={14} lg={14} xl={14}>
+        <Col offset={0.5} xs={17} sm={17} md={11} lg={11} xl={11}>
           <Link href="/">
             <a>
               <span className="header-logo">whm.zone</span>
             </a>
           </Link>
         </Col>
-        <Col xs={5} sm={5} md={7} lg={7} xl={7}>
+        <Col xs={5} sm={5} md={9} lg={9} xl={9}>
           <Menu mode="horizontal">
             <Menu.Item key="/" onClick={() => router.push("/")}>
               <HomeOutlined />
@@ -92,4 +74,5 @@ const Header = ({types = []}) => {
   );
 };
 
-export default Header;
+
+export default HeaderComp;
