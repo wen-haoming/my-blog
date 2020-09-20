@@ -2,6 +2,7 @@ import React, { useState,useEffect,useMemo} from "react";
 import "styleGlobal/comm.less";
 import "stylePages/Home.less";
 import 'stylePages/Detail.less';
+import "styleComp/md.less";
 import 'markdown-navbar/dist/navbar.css';
 import Link from 'next/link'
 
@@ -98,12 +99,12 @@ import Tocify from 'comp/tocify.tsx'
                       <span className="sub-txt">{content.view_count}</span>
                    </Col>
             </Row>
-            <div className="detail-content" dangerouslySetInnerHTML={{__html: markdownVal}}>
+            <div className="vscode-dark"    dangerouslySetInnerHTML={{__html: markdownVal}}>
             </div>
         </Col>
         <Col className="home-main-right" xs={0} sm={0} md={5} lg={5} xl={5}>
           <Author></Author>
-          <Affix offsetTop={10}>
+          <Affix offsetTop={50}>
               <div className="detail-nav comm-box">
                 <div className="nav-title">
                       文章列表
