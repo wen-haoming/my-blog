@@ -31,8 +31,6 @@ function MyApp({ Component, pageProps,types }) {
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
     </Head>
         <Layout>
-        {/* 头部组件 */}
-        <Header/>
           {/* 中间内容组件 */}
           <Component {...pageProps} />
           {/* 底部组件 */}

@@ -3,8 +3,6 @@ import "styleGlobal/comm.less";
 import "stylePages/Home.less";
 import "styleComp/md.less";
 
-import Head from "next/head";
-import Link from "next/link";
 import { Row, Col, List, Divider } from "antd";
 import {
   CalendarOutlined,
@@ -13,6 +11,8 @@ import {
 } from "@ant-design/icons";
 import { getArticleList, getTypeInfo } from "../api/index";
 import { useRouter } from "next/router";
+import Header from "comp/Header.js";
+
 
 import marked from "marked";
 import hljs from "highlight.js";
@@ -42,7 +42,7 @@ const Home = ({ list, types }) => {
   });
   return (
     <>
-      {/* <Header types={types} /> */}
+      <Header types={types} />
       <Row className="home-main" type="flex" justify="center">
         <Col className="home-main-left" xs={23} sm={23} md={16} lg={16} xl={16}>
           <List

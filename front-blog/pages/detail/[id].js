@@ -22,7 +22,7 @@ import Footer from "comp/Footer.js";
 import Tocify from 'comp/tocify.tsx'
 
 
- const  Detail = ({content,type}) => {
+ const  Detail = ({content,type,types}) => {
  const {markdownVal,tocify} =  useMemo(()=>{
     const renderer = new marked.Renderer();
 
@@ -75,6 +75,7 @@ import Tocify from 'comp/tocify.tsx'
   );
   return (
     <>
+    <Header types={types} />
       <Row className="home-main" type="flex" justify="center">
         <Col className="home-main-left" xs={23} sm={23} md={16} lg={16} xl={16}>
             <div className="detail-bread">

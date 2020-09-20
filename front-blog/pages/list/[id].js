@@ -17,6 +17,7 @@ import { useRouter } from "next/router";
 import marked from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/monokai-sublime.css";
+import Header from "comp/Header.js";
 
 import Author from "comp/Author.js";
 
@@ -61,6 +62,7 @@ const ListContent =  ({ listContent, type,types }) => {
 
   return (
     <>
+      <Header types={types} />
       <Row className="home-main" type="flex" justify="center">
         <Col className="home-main-left" xs={23} sm={23} md={16} lg={16} xl={16}>
           <List

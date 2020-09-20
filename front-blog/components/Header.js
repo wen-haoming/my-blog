@@ -1,7 +1,6 @@
 import Reac, { useEffect, useState, useMemo } from "react";
-// import 'static/style/components/header.less'
 import "../static/style/components/header.less";
-import { Row, Col, Menu, Icon, Button } from "antd";
+import { Row, Col, Menu, Icon, Affix } from "antd";
 import {
   HomeOutlined,
   VideoCameraOutlined,
@@ -12,16 +11,16 @@ import { getTypeInfo } from "../api/index";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const HeaderComp = () => {
+const HeaderComp = ({types}) => {
   const router = useRouter();
-  const [types,setTypes] = useState([])
+  // const [types,setTypes] = useState([])
 
-  useEffect(()=>{
-    void async function(){
-      let typeRes = await getTypeInfo();
-      setTypes(typeRes.data)
-    }()
-  },[])
+  // useEffect(()=>{
+  //   void async function(){
+  //     let typeRes = await getTypeInfo();
+  //     setTypes(typeRes.data)
+  //   }()
+  // },[])
 
   function getIcon(key) {
     switch (key) {
@@ -36,9 +35,9 @@ const HeaderComp = () => {
     }
   }
 
-
   return (
-    <div className="header">
+    <Affix>
+      <div className="header">
       <Row type="flex" justify="center">
         <Col offset={0.5} xs={17} sm={17} md={11} lg={11} xl={11}>
           <Link href="/">
@@ -53,7 +52,7 @@ const HeaderComp = () => {
               <HomeOutlined />
               首页
             </Menu.Item>
-            {types.map((item) => {
+            {types&&types.map((item) => {
               return (
                 <Menu.Item
                   key={item.orderNum}
@@ -70,6 +69,7 @@ const HeaderComp = () => {
         </Col>
       </Row>
     </div>
+    </Affix>
   );
 };
 
