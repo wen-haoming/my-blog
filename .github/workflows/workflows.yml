@@ -8,34 +8,34 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      # - uses: actions/checkout@v2
-      # - run: yarn bootstrap
-      # - run: tar -czvf blog-zip.tar ./front-blog 
-      # - run: tar -czvf server-zip.tar ./server2 
-      # - name: 发送后台文件到远程
-      #   uses: garygrossgarten/github-action-scp@release
-      #   with:
-      #     local: ./front-back/dist
-      #     remote: /usr/share/nginx/html/back
-      #     host: ${{secrets.HOST}}
-      #     username: root
-      #     password: ${{secrets.PASSWORD}}
-      # - name: 发送前台压缩包到远程
-      #   uses: garygrossgarten/github-action-scp@release
-      #   with:
-      #     local: blog-zip.tar
-      #     remote: /home/blog/blog-zip.tar
-      #     host: ${{secrets.HOST}}
-      #     username: root
-      #     password: ${{secrets.PASSWORD}}
-      # - name: 发送服务端压缩包到远程
-      #   uses: garygrossgarten/github-action-scp@release
-      #   with:
-      #     local: server-zip.tar
-      #     remote: /home/blog/server-zip.tar
-      #     host: ${{secrets.HOST}}
-      #     username: root
-      #     password: ${{secrets.PASSWORD}}
+      - uses: actions/checkout@v2
+      - run: yarn bootstrap
+      - run: tar -czvf blog-zip.tar ./front-blog 
+      - run: tar -czvf server-zip.tar ./server2 
+      - name: 发送后台文件到远程
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ./front-back/dist
+          remote: /usr/share/nginx/html/back
+          host: ${{secrets.HOST}}
+          username: root
+          password: ${{secrets.PASSWORD}}
+      - name: 发送前台压缩包到远程
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: blog-zip.tar
+          remote: /home/blog/blog-zip.tar
+          host: ${{secrets.HOST}}
+          username: root
+          password: ${{secrets.PASSWORD}}
+      - name: 发送服务端压缩包到远程
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: server-zip.tar
+          remote: /home/blog/server-zip.tar
+          host: ${{secrets.HOST}}
+          username: root
+          password: ${{secrets.PASSWORD}}
       - name: 解压包 & 移动文件 & 启动命令
         uses: appleboy/ssh-action@master
         with:
@@ -56,6 +56,7 @@ jobs:
                    yarn start &&
                    cd /home/blog/blog && 
                    yarn install  &&
-                   fuser -k -n tcp 3000 &&
                    yarn build &&
                    yarn start 
+                  #  fuser -k -n tcp 3000 &&
+                   
