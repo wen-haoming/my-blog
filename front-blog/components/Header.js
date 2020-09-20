@@ -21,7 +21,6 @@ const HeaderComp = () => {
       let typeRes = await getTypeInfo();
       setTypes(typeRes.data)
     }()
-   
   },[])
 
   function getIcon(key) {
