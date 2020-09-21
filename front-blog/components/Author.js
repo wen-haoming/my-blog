@@ -73,7 +73,7 @@ const Author = () => {
       </Row>
       <div className="author-introduction">
         <Row>
-          <Col xs={0} sm={0} md={24} lg={24} xl={24} >分享一些</Col>
+          <Col xs={0} sm={0} md={24} lg={24} xl={24} >富强 民主 文明 和谐</Col>
         </Row>
         <Row>
           <Col xs={0} sm={0} md={24} lg={24} xl={24} >

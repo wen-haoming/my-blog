@@ -14,9 +14,9 @@ const FooterComp = () => {
            </Col>
        </Row>
        <Row justify="center" gutter={[0,0]}>
-            <span className="footer-space">Designed by 温浩明</span>
+            <span className="footer-space">Designed by wenhaoming</span>
             <span className="footer-space">Powerd by <a href="https://ant.design/index-cn">Ant-design</a> & <a href="https://www.nextjs.cn/">nextjs</a> </span>
-            <span className="footer-space">Copyright© 2020 温浩明</span>
+            <span className="footer-space">Copyright© 2020 wenhaoming</span>
             <span className="footer-space"><a href="https://beian.miit.gov.cn/#/Integrated/index">粤ICP备20071658号</a></span>
        </Row>
       </Footer>
