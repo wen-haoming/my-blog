@@ -21,7 +21,7 @@
 }
 
 .vscode-light pre:not(.hljs),
-.vscode-light code>div {
+.vscode-light code {
 	color: #333;
 	background-color: #f8f8f8;
 	font-weight: normal;

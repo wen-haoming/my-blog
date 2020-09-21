@@ -63,7 +63,7 @@ export default class Tocify {
 
   renderToc(items: TocItem[]) { // 递归 render
     return items.map(item => (
-      <Link key={item.anchor} href={`#${item.anchor}`} title={item.text}>
+      <Link className="link-href"  key={item.anchor} href={`#${item.anchor}`} title={item.text}>
         {item.children && this.renderToc(item.children)}
       </Link>
     ));
@@ -71,7 +71,7 @@ export default class Tocify {
 
   render() {
     return (
-      <Anchor affix showInkInFixed>
+      <Anchor onChange={(...args)=>{console.log(args)}}   showInkInFixed>
          {this.renderToc(this.tocItems)}
       </Anchor>
     );

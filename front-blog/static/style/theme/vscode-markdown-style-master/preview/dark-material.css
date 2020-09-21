@@ -22,7 +22,7 @@
 }
 
 .vscode-dark pre:not(.hljs),
-.vscode-dark code>div {
+.vscode-dark code {
 	background-color: #2C323C;
 }
 

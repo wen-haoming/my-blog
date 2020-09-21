@@ -137,7 +137,7 @@ const AddArticle: React.FC<props> = props => {
     <Spin spinning={addArticleLoading === true}>
       <Row gutter={5}>
         <Col span={18}>
-          <Row gutter={10}>
+          <Row gutter={50}>
             <Col span={20}>
               <Input
                 value={state.title}
@@ -148,7 +148,7 @@ const AddArticle: React.FC<props> = props => {
             <Col span={4}>
               {/* 类别数据 */}
               <Select
-                style={{ width: '150px' }}
+                style={{ width: 100,marginRight:20 }}
                 placeholder="请选择类型"
                 value={state.type_id}
                 onChange={methods.changeType}
@@ -170,7 +170,6 @@ const AddArticle: React.FC<props> = props => {
                 className="markdown-content"
                 onChange={methods.changeContent}
                 rows={35}
-                value={state.article_content}
                 placeholder="文章内容"
               ></TextArea>
             </Col>
@@ -187,18 +186,24 @@ const AddArticle: React.FC<props> = props => {
         </Col>
         <Col span={6}>
           <Row gutter={10}>
-            <Col span={24}>
-              <Button onClick={methods.publishFn} type="primary">
+            <Col>
+              <Button  onClick={methods.publishFn} type="primary">
                 发布文章
               </Button>
             </Col>
+            <Col>
+            <Button onClick={()=>{ dispatch('article/getUpdateNext') }} type="primary">
+                更新系统
+              </Button>
+            </Col>
+            </Row>
+            <Row>
             <Col span={24}>
               <br />
               <TextArea
                 onChange={methods.changeIntroduce}
                 className="markdown-content"
                 rows={4}
-                value={state.introduce}
                 placeholder="文章简介"
               ></TextArea>
               <br />

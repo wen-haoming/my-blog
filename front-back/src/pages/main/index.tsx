@@ -96,7 +96,6 @@ const [reactiveState,immerReactiveState] = useReactive({
         </Content>
         <Footer style={{ textAlign: 'center' }}>
           Ant Design ©2018 Created by Ant UED
-          {JSON.stringify(immerReactiveState)}
         </Footer>
       </Layout>
     </Layout>

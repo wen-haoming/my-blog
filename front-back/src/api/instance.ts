@@ -5,8 +5,8 @@ import {message} from 'antd'
 
 const config:AxiosRequestConfig = {};
   if(  process.env.NODE_ENV === 'development'){
-    // config.baseURL = "http://127.0.0.1:7002/";
-    config.baseURL = "http://47.107.232.30:7002/";
+    config.baseURL = "http://127.0.0.1:7002/";
+    // config.baseURL = "http://47.107.232.30:7002/";
   }else{
     config.baseURL = "http://47.107.232.30:7002/";
   }

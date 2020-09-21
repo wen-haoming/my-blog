@@ -9,8 +9,6 @@ import Link from 'next/link'
 import Head from "next/head";
 import { Row, Col, List, Breadcrumb,Affix } from "antd";
 import {CalendarOutlined,FolderOutlined,FireOutlined} from "@ant-design/icons";
-import ReactMarkdown from 'react-markdown';
-import MarkNav from 'markdown-navbar'
 import {getArticleList,getArticleById,getTypeInfo} from '../../api/index'
 import marked from 'marked'
 import hljs from "highlight.js";
@@ -99,16 +97,13 @@ import Tocify from 'comp/tocify.tsx'
                       <span className="sub-txt">{content.view_count}</span>
                    </Col>
             </Row>
-            <div className="vscode-dark"    dangerouslySetInnerHTML={{__html: markdownVal}}>
+            <div className="vscode-light"  id="markdown-render"  dangerouslySetInnerHTML={{__html: markdownVal}}>
             </div>
         </Col>
         <Col className="home-main-right" xs={0} sm={0} md={5} lg={5} xl={5}>
           <Author></Author>
           <Affix offsetTop={50}>
               <div className="detail-nav comm-box">
-                <div className="nav-title">
-                      文章列表
-                </div>
                   {tocify && tocify.render && tocify.render()}
               </div>
           </Affix>

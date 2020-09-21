@@ -40,3 +40,6 @@ export const edit = async (data:any)=>{
   return await instance.post('edit/',data)
 }
 
+export const updateNext = async ()=>{
+   return await instance.get('updateNext')
+}

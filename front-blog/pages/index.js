@@ -24,7 +24,6 @@ const Home = ({ list, types }) => {
   const [mylist, setMylist] = useState(list);
   const router = useRouter();
   const renderer = new marked.Renderer();
-
   marked.setOptions({
     renderer: renderer,
     gfm: true,

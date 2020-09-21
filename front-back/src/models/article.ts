@@ -1,5 +1,5 @@
 import { history, Reducer, Effect,Subscription } from 'umi';
-import { getTypeInfo, postAddArticle, getList, deleteList,query, edit} from '../api';
+import { getTypeInfo, postAddArticle, getList, deleteList,query, edit,updateNext} from '../api';
 import { message } from 'antd';
 
 export const state = {
@@ -35,6 +35,7 @@ interface Modal {
     deleteList: Effect;
     getQuery:Effect
     posetEdit:Effect;
+    getUpdateNext:Effect
   };
   subscriptions:{
     setup:Subscription
@@ -119,6 +120,10 @@ const modal: Modal = {
             }else{
               message.success('修改失败')
             }
+    },
+    *getUpdateNext(_,{call}){
+        yield call(updateNext)
+        message.success('发起构建指令,等待几分钟即可')
     }
   },
   subscriptions:{
