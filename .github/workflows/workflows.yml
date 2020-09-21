@@ -45,6 +45,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: 
                   cd /home/blog && 
+                  
                   tar zxvf /home/blog/blog-zip.tar &&
                   tar zxvf /home/blog/server-zip.tar && 
                   rm -rf blog server && 

@@ -13,4 +13,7 @@ module.exports = app => {
     router.get('/deleteList/:id',adminauth,controller.admin.main.deleteList)
     router.get('/query/:id',adminauth,controller.admin.main.query)
     router.post('/edit',adminauth,controller.admin.main.edit)
+    router.get('/updateNext',adminauth,controller.admin.main.updateNext)
 };
+
+

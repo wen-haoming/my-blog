@@ -48,6 +48,20 @@ class MainController extends Controller{
                 this.ctx.status = 500
             }
     }
+    async updateNext(){
+        try{
+            execute((txt)=>{
+                console.log('更新nextjs'+txt,'--------------') 
+            })
+            this.ctx.body = {
+                  data:'成功'
+            }
+        }catch(e){
+            this.ctx.body = {
+                data:'失败'
+          }  
+        }
+    }
     async list(){
         // desc
         // asc
