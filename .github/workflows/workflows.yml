@@ -45,7 +45,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: 
                   cd /home/blog && 
-                  
                   tar zxvf /home/blog/blog-zip.tar &&
                   tar zxvf /home/blog/server-zip.tar && 
                   rm -rf blog server && 
@@ -56,6 +55,7 @@ jobs:
                    yarn stop &&
                    yarn start &&
                    cd /home/blog/blog && 
+                   fuser -k -n tcp 3000 &&
                    yarn install  &&
                    yarn build &&
                    yarn start 
