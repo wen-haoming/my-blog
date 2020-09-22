@@ -192,7 +192,7 @@ const AddArticle: React.FC<props> = props => {
               </Button>
             </Col>
             <Col>
-            <Button onClick={()=>{ dispatch('article/getUpdateNext') }} type="primary">
+            <Button onClick={()=>{ dispatch({type:'article/getUpdateNext'}) }} type="primary">
                 更新系统
               </Button>
             </Col>
