@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "fuser -k -n tcp 3000 && next start",
+    "start": "next start",
     "export":"next export"
   },
   "dependencies": {
